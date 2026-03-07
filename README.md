@@ -10,5 +10,5 @@ If you find this project useful and would like to keep it maintained, new featur
 
 ### License ###
 
-objtools-ng is published under the MIT license.
+code-samples is published under the MIT license.
 

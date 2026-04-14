@@ -2,11 +2,13 @@
 
 This is collection source-code snippets that can be compiled in different ways to practice binary analysis.
 
+### How to build ###
+
+See the [BUILD.md](BUILD.md) for detailed instructions.
+
 ### Support & Sponsorship ###
 
-If you can contribute or you want to, feel free to do it at [PayPal](https://www.paypal.com/ncp/payment/L6UQHUDXKSHTC), I will be really thankful for anything, even if it is a coffee, because that helps me a lot to know that you care:)
-
-If you find this project useful and would like to keep it maintained, new features added and a regular release cycle. Then, could you sponsor at [PayPal](https://www.paypal.com/ncp/payment/2DAZRCQM7MDFG).
+If you find this project useful and would like to keep it maintained, with new code snippets or want to support my research. Then, you can sponsor me at [PayPal](https://www.paypal.com/ncp/payment/2DAZRCQM7MDFG), or you can buy me a coffee at [PayPal](https://www.paypal.com/ncp/payment/L6UQHUDXKSHTC). I will be really thankful for anything, even if it is a coffee, because that helps me a lot to know that you care:)
 
 ### License ###
 

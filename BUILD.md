@@ -31,7 +31,7 @@ sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 git clone https://github.com/z0mb13w4r/code-samples.git
 ```
 
-### Build individual example:
+#### Build individual example:
 
 ```bash
 cd <example directory>

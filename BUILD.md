@@ -25,6 +25,19 @@ sudo apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 ```
 
+#### Install 32/64-bit MIPS cross compile packages
+
+```bash
+sudo apt-get install -y gcc-mips-linux-gnu g++-mips-linux-gnu
+sudo apt-get install -y gcc-mips64-linux-gnuabi64 g++-mips64-linux-gnuabi64
+```
+
+#### Install 64-bit RISC-V cross compile packages
+
+```bash
+sudo apt-get install -y gcc-riscv64-linux-gnu g++-riscv64-linux-gnu
+```
+
 #### Clone this repo:
 
 ```bash
@@ -54,6 +67,24 @@ To cross-compile the example as ARM (64-bit).
 
 ```bash
 make CROSS=ARM64
+```
+
+To cross-compile the example as MIPS (32-bit).
+
+```bash
+make CROSS=MIPS32
+```
+
+To cross-compile the example as MIPS (64-bit).
+
+```bash
+make CROSS=MIPS64
+```
+
+To cross-compile the example as RISC-V (64-bit).
+
+```bash
+make CROSS=RISCV64
 ```
 
 To cross-compile the example as generic (32-bit).

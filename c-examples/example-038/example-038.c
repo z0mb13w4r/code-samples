@@ -4,7 +4,7 @@
 #define MAXLINE		(1000)
 
 /* getline: get line into s, return length */
-int getline(char s[], int lim)
+int _getline(char s[], int lim)
 {
 	int c, i;
 
@@ -44,7 +44,7 @@ main(int argc, char* argv[])
 	if (argc != 1)
 		printf("Usage: find -x -n pattern\n");
 	else
-		while (getline(line, MAXLINE) > 0) {
+		while (_getline(line, MAXLINE) > 0) {
 			lineno++;
 			if ((strstr(line, *argv) != NULL) != except) {
 				if (number)
@@ -55,3 +55,4 @@ main(int argc, char* argv[])
 		}
 	return found;
 }
+

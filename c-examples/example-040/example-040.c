@@ -1,6 +1,6 @@
-#include <conio.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <curses.h>
 #include <string.h>
 
 #define MAXTOKEN			(100)
@@ -8,7 +8,7 @@
 
 enum { NAME, PARENS, BRACKETS };
 
-int tokentype;								/* type of last token */
+int tokentype;							/* type of last token */
 char token[MAXTOKEN];						/* last token string */
 char name[MAXTOKEN];						/* identifier name */
 char datatype[MAXTOKEN];					/* data type = char, int, etc. */
@@ -26,31 +26,31 @@ int gettoken(void)
 	int c;
 	char* p = token;
 
-	while ((c = _getch()) == ' ' || c == '\t')
+	while ((c = getchar()) == ' ' || c == '\t')
 		;
-	_putch(c);
+	putchar(c);
 	if (c == '(') {
-		if ((c = _getch()) == ')') {
-			_putch(c);
+		if ((c = getchar()) == ')') {
+			putchar(c);
 			strcpy(token, "()");
 			return tokentype = PARENS;
 		} else {
-			_ungetch(c);
+			ungetch(c);
 			return tokentype = '(';
 		}
 	} else if (c == '[') {
-		for (*p++ = c; (*p++ = _getch()) != ']'; )
+		for (*p++ = c; (*p++ = getchar()) != ']'; )
 			;
-		_putch(*(p - 1));
+		putchar(*(p - 1));
 		*p = '\0';
 		return tokentype = BRACKETS;
 	} else if (isalpha(c)) {
-		for (*p++ = c; isalnum(c = _getch()); ) {
+		for (*p++ = c; isalnum(c = getchar()); ) {
 			*p++ = c;
-			_putch(c);
+			putchar(c);
 		}
 		*p = '\0';
-		_ungetch(c);
+		ungetch(c);
 		return tokentype = NAME;
 	}
 	return tokentype = c;

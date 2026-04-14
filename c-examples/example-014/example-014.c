@@ -3,7 +3,7 @@
 #define MAXLINE		1000
 
 /* getline: read a line into s, return length */
-int getline(char s[], int lim)
+int _getline(char s[], int lim)
 {
 	int c, i;
 
@@ -37,7 +37,7 @@ main()
 	char longest[MAXLINE];	/* longest line saved here */
 
 	max = 0;
-	while ((len = getline(line, MAXLINE)) > 0)
+	while ((len = _getline(line, MAXLINE)) > 0)
 		if (len > max) {
 			max = len;
 			copy(longest, line);
@@ -48,3 +48,4 @@ main()
 
 	return 0;
 }
+

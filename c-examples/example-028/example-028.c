@@ -5,7 +5,7 @@
 char pattern[] = "ould";		/* pattern to search for */
 
 /* getline: get line into s, return length */
-int getline(char s[], int lim)
+int _getline(char s[], int lim)
 {
 	int c, i;
 
@@ -40,7 +40,7 @@ main()
 	char line[MAXLINE];
 	int found = 0;
 
-	while (getline(line, MAXLINE) > 0)
+	while (_getline(line, MAXLINE) > 0)
 		if (strindex(line, pattern) >= 0) {
 			printf("%s\n", line);
 			found++;
@@ -48,3 +48,4 @@ main()
 
 	return found;
 }
+

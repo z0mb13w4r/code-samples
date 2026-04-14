@@ -28,7 +28,7 @@ int _fputs(char* s, FILE* iop)
 }
 
 /* getline: read a line, return length */
-int getline(char* line, int max)
+int _getline(char* line, int max)
 {
 	if (_fgets(line, max, stdin) == NULL)
 		return 0;
@@ -41,8 +41,9 @@ main()
 	char line[MAXLINE];
 
 	sum = 0;
-	while (getline(line, MAXLINE) > 0)
+	while (_getline(line, MAXLINE) > 0)
 		_fputs(line, stdout);
 
 	return 0;
 }
+

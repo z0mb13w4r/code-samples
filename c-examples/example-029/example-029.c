@@ -8,10 +8,10 @@ main()
 {
 	double sum, atof(char []);
 	char line[MAXLINE];
-	int getline(char s[], int lim);
+	int _getline(char s[], int lim);
 
 	sum = 0;
-	while (getline(line, MAXLINE) > 0)
+	while (_getline(line, MAXLINE) > 0)
 		printf("\t%g\n", sum += atof(line));
 
 	return 0;
@@ -41,7 +41,7 @@ double atof(char s[])
 }
 
 /* getline: get line into s, return length */
-int getline(char s[], int lim)
+int _getline(char s[], int lim)
 {
 	int c, i;
 
@@ -55,3 +55,4 @@ int getline(char s[], int lim)
 	s[i] = '\0';
 	return i;
 }
+

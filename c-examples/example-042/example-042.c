@@ -1,6 +1,6 @@
-#include <conio.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <curses.h>
 #include <string.h>
 
 #define CTRLZ			(26)
@@ -71,24 +71,24 @@ int getword(char* word, int lim)
 	int c;
 	char* w = word;
 
-	while (isspace(c = _getch()))
+	while (isspace(c = getch()))
 		;
 	if (c != CTRLZ) {
 		*w++ = c;
-		_putch(c);
+		putchar(c);
 	}
 	if (!isalpha(c)) {
 		*w = '\0';
 		return c;
 	}
 	for (; --lim > 0; w++) {
-		_putch(*w = _getch());
+		putchar(*w = getch());
 		if (!isalnum(*w)) {
-			_ungetch(*w);
+			ungetch(*w);
 			break;
 		}
 	}
-	_putch('\n');
+	putchar('\n');
 	*w = '\0';
 	return word[0];
 }
@@ -108,3 +108,4 @@ main()
 			printf("%4d %s\n", keytab[n].count, keytab[n].word);
 	return 0;
 }
+

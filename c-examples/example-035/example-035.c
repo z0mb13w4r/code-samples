@@ -8,7 +8,7 @@ char* lineptr[MAXLINES];			/* pointer to text lines */
 #define MAXLEN			(1000)		/* max length of any input line */
 
 /* getline: read a line into s, return length */
-int getline(char s[], int lim)
+int _getline(char s[], int lim)
 {
 	int c, i;
 
@@ -27,7 +27,7 @@ int readlines(char* lineptr[], int maxlines)
 	char *p, line[MAXLEN];
 
 	nlines = 0;
-	while ((len = getline(line, MAXLEN)) > 1)
+	while ((len = _getline(line, MAXLEN)) > 1)
 		if (nlines >= maxlines || (p = malloc(len + 1)) == NULL)
 			return -1;
 		else {
@@ -86,3 +86,4 @@ main()
 		return 1;
 	}
 }
+

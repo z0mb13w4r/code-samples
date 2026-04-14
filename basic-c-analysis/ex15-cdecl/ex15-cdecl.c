@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void __cdecl demo(int a, int b, int c, int d) {
+void __attribute__((__cdecl__)) demo(int a, int b, int c, int d) {
 }
 
 int main(void) {

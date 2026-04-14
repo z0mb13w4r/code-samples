@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void __stdcall demo(int a, int b, int c, int d) {
+void __attribute__((__stdcall__)) demo(int a, int b, int c, int d) {
 }
 
 int main(void) {

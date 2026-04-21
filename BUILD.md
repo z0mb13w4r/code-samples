@@ -3,7 +3,7 @@
 #### Install packages:
 
 ```bash
-sudo apt install -y make cmake autoconf libtool pkg-config gcc g++ libssl-dev libncurses-dev binutils-dev
+sudo apt install -y make cmake autoconf libtool pkg-config gcc g++ libssl-dev zlib1g-dev libncurses-dev binutils-dev
 ```
 
 #### Install 32-bit cross compile packages

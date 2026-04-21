@@ -1,6 +1,6 @@
 # code-samples
 
-This is collection source-code snippets that can be compiled as  ELF (Executable and Linkable Format) format, PE (Portable Executable) format, x86, ARM, ARM Thumb, AARCH64, MIPS and RISC-V assembly language to practice binary analysis.
+This is collection source-code snippets that can be compiled as  ELF (Executable and Linkable Format) format, PE (Portable Executable) format, x86, x86-64, ARM, ARM Thumb, AARCH64, MIPS and RISC-V assembly language to practice binary analysis.
 
 ### How to build ###
 

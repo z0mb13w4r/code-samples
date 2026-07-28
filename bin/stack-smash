@@ -66,10 +66,18 @@ main() {
   elif [ "${ARG_VERSION}" == "YES" ]; then
     show_version
     exit 0
+  elif [[ -z "${COMMAND}" ]]; then
+    echo status
+    exit 0
   fi
 
   check_root "$@"
 
+  if [ "${COMMAND}" == "enable" ]; then
+    echo enable
+  elif [ "${COMMAND}" == "disable" ]; then
+    echo disable
+  fi
 }
 
 main "$@"

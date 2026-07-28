@@ -76,9 +76,9 @@ main() {
   check_root "$@"
 
   if [ "${COMMAND}" == "enable" ]; then
-    echo enable
+    ${STACKSMASHCMD}=2
   elif [ "${COMMAND}" == "disable" ]; then
-    echo disable
+    ${STACKSMASHCMD}=0
   fi
 }
 

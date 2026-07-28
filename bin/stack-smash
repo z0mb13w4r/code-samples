@@ -5,6 +5,8 @@ SCRIPTNAME=$(basename "$0")
 
 CATBIN=/usr/bin/cat
 
+STACKSMASHCMD="/usr/sbin/sysctl kernel.randomize_va_space"
+
 function log_error() {
   echo "ERROR: $*" >&2
 }
@@ -67,7 +69,7 @@ main() {
     show_version
     exit 0
   elif [[ -z "${COMMAND}" ]]; then
-    echo status
+    ${STACKSMASHCMD}
     exit 0
   fi
 

@@ -5,6 +5,19 @@ SCRIPTNAME=$(basename "$0")
 
 CATBIN=/usr/bin/cat
 
+function log_error() {
+  echo "ERROR: $*" >&2
+}
+
+function check_root() {
+  if [[ ${EUID} -ne 0 ]]; then
+    log_error "This script must be run with root privileges."
+    echo ""
+    echo "Please run: sudo $0 $*"
+    exit 1
+  fi
+}
+
 function show_usage() {
   ${CATBIN} << EOF
 Usage: ${SCRIPTNAME} v${SCRIPTVERSION}
@@ -28,11 +41,11 @@ parse_args() {
         shift # past argument
         ;;
       -v|--version)
-        SHOW_VERSION=YES
+        ARG_VERSION=YES
         shift # past argument
         ;;
       -h|--help)
-        SHOW_HELP=YES
+        ARG_HELP=YES
         shift # past argument
         ;;
       *)
@@ -47,13 +60,16 @@ parse_args() {
 main() {
   parse_args "$@"
 
-  if [ "${SHOW_HELP}" == "YES" ]; then
+  if [ "${ARG_HELP}" == "YES" ]; then
     show_usage
     exit 0
-  elif [ "${SHOW_VERSION}" == "YES" ]; then
+  elif [ "${ARG_VERSION}" == "YES" ]; then
     show_version
     exit 0
   fi
+
+  check_root "$@"
+
 }
 
 main "$@"

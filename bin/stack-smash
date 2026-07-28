@@ -1,0 +1,60 @@
+#!/bin/bash
+
+SCRIPTVERSION=1.0
+SCRIPTNAME=$(basename "$0")
+
+CATBIN=/usr/bin/cat
+
+function show_usage() {
+  ${CATBIN} << EOF
+Usage: ${SCRIPTNAME} v${SCRIPTVERSION}
+EXAMPLES:
+  ${SCRIPTNAME} enable
+  ${SCRIPTNAME} disable
+  ${SCRIPTNAME} -v|--version
+  ${SCRIPTNAME} -h|--help
+EOF
+}
+
+function show_version() {
+  echo ${SCRIPTNAME} v${SCRIPTVERSION}
+}
+
+parse_args() {
+  while [[ $# -gt 0 ]]; do
+    case ${1} in
+      enable|disable)
+        COMMAND=${1}
+        shift # past argument
+        ;;
+      -v|--version)
+        SHOW_VERSION=YES
+        shift # past argument
+        ;;
+      -h|--help)
+        SHOW_HELP=YES
+        shift # past argument
+        ;;
+      *)
+        echo "Unknown option ${1}"
+        show_usage
+        exit 1
+        ;;
+    esac
+  done
+}
+
+main() {
+  parse_args "$@"
+
+  if [ "${SHOW_HELP}" == "YES" ]; then
+    show_usage
+    exit 0
+  elif [ "${SHOW_VERSION}" == "YES" ]; then
+    show_version
+    exit 0
+  fi
+}
+
+main "$@"
+

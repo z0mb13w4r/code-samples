@@ -53,6 +53,6 @@ static main()
 	if (closedown)
 		Exit(0); // Exit IDA Pro
 
-	
 	return 0;
 }
+
